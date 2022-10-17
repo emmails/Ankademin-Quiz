@@ -13,14 +13,12 @@ const rightAnswer = (event) => {
 }
 
 const rightAnswerCheckbox = (event) => {
-    
-    console.log(event);
     if(event.value === "true"){
         total = total + 0.25;
-        name.style.backgroundColor = "green";
+        event.parentElement.style.color = "green";
     }
     else{
-        name.backgroundColor = "red";
+        event.parentElement.style.color = "red";
     }
 }
 
@@ -34,7 +32,9 @@ resultBtn.addEventListener("click", (event) => {
     let five = document.querySelector("#questionFive");
     let six = document.querySelector("#questionSix");
     let seven = document.querySelector("#questionSeven");
-    let eight = document.querySelectorAll("[name='questionEight']:checked")
+    let eight = document.querySelectorAll("[name='questionEight']:checked");
+    let nine = document.querySelectorAll("[name='questionNine']:checked");
+    let ten = document.querySelectorAll("[name='questionTen']:checked");
 
     rightAnswer(one);
     rightAnswer(two);
@@ -45,16 +45,19 @@ resultBtn.addEventListener("click", (event) => {
     rightAnswer(seven);
     eight.forEach((answer) => {
         rightAnswerCheckbox(answer)})
-
+    nine.forEach((answer) => {
+        rightAnswerCheckbox(answer)})
+    ten.forEach((answer) => {
+        rightAnswerCheckbox(answer)})
 
     let result = `Resultat: ${total}/10`;
 
-    if(total < 2){
+    if(total < 5){
         h4.innerText = `${result} 
         Underkänd!`;
         h4.style.color = "red";
     }
-    else if(total <= 4){
+    else if(total <= 7.5){
         h4.innerText = `${result} 
         Godkänd!`;
         h4.style.color = "orange";
