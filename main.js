@@ -1,8 +1,7 @@
 let resultBtn = document.querySelector("#result");
-
 let h4 = document.createElement("h4");
-
 let total = 0;
+
 const rightAnswer = (event) => {
     if(event.value === "true"){
         total++;
@@ -10,6 +9,18 @@ const rightAnswer = (event) => {
     }
     else{
         event.parentElement.style.color = "red";
+    }
+}
+
+const rightAnswerCheckbox = (event) => {
+    
+    console.log(event);
+    if(event.value === "true"){
+        total = total + 0.25;
+        name.style.backgroundColor = "green";
+    }
+    else{
+        name.backgroundColor = "red";
     }
 }
 
@@ -23,6 +34,7 @@ resultBtn.addEventListener("click", (event) => {
     let five = document.querySelector("#questionFive");
     let six = document.querySelector("#questionSix");
     let seven = document.querySelector("#questionSeven");
+    let eight = document.querySelectorAll("[name='questionEight']:checked")
 
     rightAnswer(one);
     rightAnswer(two);
@@ -31,8 +43,10 @@ resultBtn.addEventListener("click", (event) => {
     rightAnswer(five);
     rightAnswer(six);
     rightAnswer(seven);
+    eight.forEach((answer) => {
+        rightAnswerCheckbox(answer)})
 
-    console.log(total);
+
     let result = `Resultat: ${total}/10`;
 
     if(total < 2){
