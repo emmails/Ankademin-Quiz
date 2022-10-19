@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+}
+header {
+    background-color: rgba(155, 155, 155, 0.33);
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-right: 10px;
+    position: sticky;
+    top: 0;
+}
+
+#darkMode {
+    float: right;
+}
+
+#lightMode {
+    float: right;
+}
+
+#dark {
+    background-color: black;
+}
+
+#dark h1, #dark div {
+    color: white;
+}
