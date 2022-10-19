@@ -1,51 +1,86 @@
-let keySolution = [
-    "true",
-    "false",
-    "false",
-    "true", 
-    "5.3",
-    "6.4",
-    "7.2",
-    ["8.1", "8.3"]
-];
-
-let quizAnswer = [];
-
 let resultBtn = document.querySelector("#result");
+let h4 = document.createElement("h4");
+let total = 0;
 
-resultBtn.addEventListener("click", () => {
-    let test = document.querySelectorAll("[class='eight']:checked")
-    let arr = [];
-    test.forEach((answer) => {
-        arr.push(answer.value);
-    })
-    quizAnswer.push(
-    document.querySelector("[name='questionOne']:checked").value,
+const rightAnswer = (event) => {
+    if(event.value === "true"){
+        total++;
+        event.parentElement.style.color = "green";
+    }
+    else{
+        event.parentElement.style.color = "red";
+    }
+}
+
+const rightAnswerCheckbox = (event) => {
+    if(event.value === "true"){
+        total = total + 0.25;
+        event.parentElement.style.color = "green";
+    }
+    else{
+        event.parentElement.style.color = "red";
+    }
+}
+
+resultBtn.addEventListener("click", (event) => {
+    h4.innerHTML = "";
+    total = 0;
+    let one = document.querySelector("[name='questionOne']:checked");
+    let two = document.querySelector("[name='questionTwo']:checked");
+    let three = document.querySelector("[name='questionThree']:checked");
+    let four = document.querySelector("[name='questionFour']:checked");
+    let five = document.querySelector("#questionFive");
+    let six = document.querySelector("#questionSix");
+    let seven = document.querySelector("#questionSeven");
+    let eight = document.querySelectorAll("[name='questionEight']:checked");
+    let nine = document.querySelectorAll("[name='questionNine']:checked");
+    let ten = document.querySelectorAll("[name='questionTen']:checked");
+
+    rightAnswer(one);
+    rightAnswer(two);
+    rightAnswer(three);
+    rightAnswer(four);
+    rightAnswer(five);
+    rightAnswer(six);
+    rightAnswer(seven);
+    eight.forEach((answer) => {
+        rightAnswerCheckbox(answer)})
+    nine.forEach((answer) => {
+        rightAnswerCheckbox(answer)})
+    ten.forEach((answer) => {
+        rightAnswerCheckbox(answer)})
+
+    let result = `Resultat: ${total}/10`;
+
+    if(total < 5){
+        h4.innerText = `${result} 
+        Underkänd!`;
+        h4.style.color = "red";
+    }
+    else if(total <= 7.5){
+        h4.innerText = `${result} 
+        Godkänd!`;
+        h4.style.color = "orange";
+    }
+    else{
+        h4.innerText = `${result} 
+        Mycket väl godkänd!`;
+        h4.style.color = "green";
+    }
+
+    document.body.append(h4);
+})
+
+
+
+
+    /* document.querySelector("[name='questionOne']:checked").value,
     document.querySelector("[name='questionTwo']:checked").value,
     document.querySelector("[name='questionThree']:checked").value,
     document.querySelector("[name='questionFour']:checked").value,
     document.querySelector("#questionFive").value,
     document.querySelector("#questionSix").value,
     document.querySelector("#questionSeven").value,
-    arr
-    /* document.querySelectorAll("[name='questionEight']:checked").value,
+    document.querySelectorAll("[name='questionEight']:checked").value,
     document.querySelectorAll("[name='questionNine']:checked").value,
     document.querySelectorAll("[name='questionTen']:checked").value */
-    );
-    let rightAnswer = quizAnswer.filter((answer, i) => {
-        return (answer == keySolution[i]);
-    })
-
-    
-
-    console.log(quizAnswer);
-    console.log(rightAnswer);
-    console.log(arr);
-})
-
-
-
-
-/* test.forEach((answer) => {
-    rightAnswer.push()
-}) */
