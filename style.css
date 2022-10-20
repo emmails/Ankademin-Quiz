@@ -1,15 +1,15 @@
 body {
     margin: 0;
-    background-image: linear-gradient(rgb(147, 180, 147), whitesmoke);
+    background-image: url(/Pictures/lightMode.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 #layout {
     overflow: scroll;
-    margin-top: 150px;
-    margin-bottom: 150px;
+    margin-top: 90px;
     margin-left: 400px;
     margin-right: 400px;
-    border-radius: 30px;
     height: 500px;
     padding: 50px;
     box-shadow: 0 0 0.55rem rgba(112, 112, 112, 0.694);
@@ -33,7 +33,9 @@ header {
 }
 
 #dark {
-    background-image: linear-gradient(black, rgb(35, 34, 34));
+    background-image: url(/Pictures/darkMode.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 #dark #layout {
@@ -55,4 +57,18 @@ h1 {
 #result {
     float: right;
 
+}
+
+#welcomeH2 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 30px;
+}
+
+#startQuiz {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
