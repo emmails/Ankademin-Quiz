@@ -1,9 +1,13 @@
 let resultBtn = document.querySelector("#result");
 let h4 = document.createElement("h4");
 let total = 0;
+let darkModeBtn = document.querySelector("header button");
 
 const rightAnswer = (event) => {
-    if(event.value === "true"){
+    if(event === null || event.value === "null"){
+        total = null; 
+    }
+    else if(event.value === "true"){
         total++;
         event.parentElement.style.color = "green";
     }
@@ -13,18 +17,31 @@ const rightAnswer = (event) => {
 }
 
 const rightAnswerCheckbox = (event) => {
-    if(event.value === "true"){
-        total = total + 0.25;
-        event.parentElement.style.color = "green";
+    let checkboxAnswer = [];
+    event.forEach((answer) => {
+        checkboxAnswer.push(answer.value) 
+    });
+    if(checkboxAnswer.length === 0){
+        total = null;
+    }
+    else if((event[0].name === "questionEight" && checkboxAnswer.length !== 2)||
+    (event[0].name === "questionNine" && checkboxAnswer.length !== 3)||
+    (event[0].name === "questionTen" && checkboxAnswer.length !== 1)){
+        event[0].closest("div").style.color = "red";
+    }
+    else if(checkboxAnswer.includes("false")){
+        event[0].closest("div").style.color = "red";
     }
     else{
-        event.parentElement.style.color = "red";
+        total++;
+        event[0].closest("div").style.color = "green";
     }
-}
+};
 
 resultBtn.addEventListener("click", (event) => {
     h4.innerHTML = "";
     total = 0;
+
     let one = document.querySelector("[name='questionOne']:checked");
     let two = document.querySelector("[name='questionTwo']:checked");
     let three = document.querySelector("[name='questionThree']:checked");
@@ -43,16 +60,16 @@ resultBtn.addEventListener("click", (event) => {
     rightAnswer(five);
     rightAnswer(six);
     rightAnswer(seven);
-    eight.forEach((answer) => {
-        rightAnswerCheckbox(answer)})
-    nine.forEach((answer) => {
-        rightAnswerCheckbox(answer)})
-    ten.forEach((answer) => {
-        rightAnswerCheckbox(answer)})
+    rightAnswerCheckbox(eight);
+    rightAnswerCheckbox(nine);
+    rightAnswerCheckbox(ten);
 
     let result = `Resultat: ${total}/10`;
 
-    if(total < 5){
+    if(total === null){
+        alert("Du måste svara på alla frågor för att få ett resultat!")
+    }
+    else if(total < 5){
         h4.innerText = `${result} 
         Underkänd!`;
         h4.style.color = "red";
@@ -67,20 +84,20 @@ resultBtn.addEventListener("click", (event) => {
         Mycket väl godkänd!`;
         h4.style.color = "green";
     }
-
+    
     document.body.append(h4);
 })
 
-
-
-
-    /* document.querySelector("[name='questionOne']:checked").value,
-    document.querySelector("[name='questionTwo']:checked").value,
-    document.querySelector("[name='questionThree']:checked").value,
-    document.querySelector("[name='questionFour']:checked").value,
-    document.querySelector("#questionFive").value,
-    document.querySelector("#questionSix").value,
-    document.querySelector("#questionSeven").value,
-    document.querySelectorAll("[name='questionEight']:checked").value,
-    document.querySelectorAll("[name='questionNine']:checked").value,
-    document.querySelectorAll("[name='questionTen']:checked").value */
+darkModeBtn.addEventListener("click", (event) => {
+    console.log(event.target);
+    if(event.target.id === "darkMode"){
+        document.getElementById("darkMode").id = "lightMode";
+        event.target.innerText = "Light Mode";
+        document.body.id = "dark";
+    }
+    else{
+        document.getElementById("lightMode").id = "darkMode";
+        event.target.innerText = "Dark Mode";
+        document.body.id = "light";
+    }
+})
