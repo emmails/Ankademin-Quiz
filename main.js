@@ -2,6 +2,7 @@ let resultBtn = document.querySelector("#result");
 let h4 = document.createElement("h4");
 let total = 0;
 let darkModeBtn = document.querySelector("header button");
+let layout = document.querySelector("#layout");
 
 const rightAnswer = (event) => {
     if(event === null || event.value === "null"){
@@ -66,7 +67,7 @@ resultBtn.addEventListener("click", (event) => {
 
     let result = `Resultat: ${total}/10`;
 
-    if(total === null){
+    if(total == null){
         alert("Du måste svara på alla frågor för att få ett resultat!")
     }
     else if(total < 5){
@@ -85,7 +86,7 @@ resultBtn.addEventListener("click", (event) => {
         h4.style.color = "green";
     }
     
-    document.body.append(h4);
+    layout.append(h4);
 })
 
 darkModeBtn.addEventListener("click", (event) => {

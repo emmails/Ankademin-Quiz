@@ -1,8 +1,22 @@
 body {
     margin: 0;
+    background-image: url(/Pictures/lightMode.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
+
+#layout {
+    overflow: scroll;
+    margin-top: 90px;
+    margin-left: 30%;
+    margin-right: 30%;
+    height: 500px;
+    padding: 50px;
+    box-shadow: 0 0 0.55rem rgba(112, 112, 112, 0.694);
+    background-color: whitesmoke;
+}
+
 header {
-    background-color: rgba(155, 155, 155, 0.33);
     padding-top: 10px;
     padding-bottom: 30px;
     padding-right: 10px;
@@ -19,9 +33,42 @@ header {
 }
 
 #dark {
+    background-image: url(/Pictures/darkMode.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#dark #layout {
     background-color: black;
 }
 
 #dark h1, #dark div {
     color: white;
+}
+
+h1 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#result {
+    float: right;
+
+}
+
+#welcomeH2 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 30px;
+}
+
+#startQuiz {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
