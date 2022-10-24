@@ -8,8 +8,8 @@ body {
 #layout {
     overflow: scroll;
     margin-top: 90px;
-    margin-left: 400px;
-    margin-right: 400px;
+    margin-left: 30%;
+    margin-right: 30%;
     height: 500px;
     padding: 50px;
     box-shadow: 0 0 0.55rem rgba(112, 112, 112, 0.694);

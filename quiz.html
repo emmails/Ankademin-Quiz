@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
-    <title>Document</title>
+    <title>Julquiz</title>
 </head>
 <body id="light">
     <header>
@@ -17,18 +17,18 @@
     <!-- Fråga 1 - Sant eller falskt -->
     <div>
         <h4>Fråga 1</h4>
-        <p>--Här ska frågan stå</p>
-        <input type="radio" name="questionOne" value="true" id="trueOne" checked>
+        <p>I Norden firar flest länder jul den 25/12.</p>
+        <input type="radio" name="questionOne" value="false" id="trueOne">
         <label for="trueOne">Sant</label>
-        <input type="radio" name="questionOne" value="false" id="falseOne">
+        <input type="radio" name="questionOne" value="true" id="falseOne">
         <label for="falseOne">Falskt</label>
     </div>
 
     <!-- Fråga 2 Sant eller falskt -->
     <div>
         <h4>Fråga 2</h4>
-        <p>--Här ska frågan stå</p>
-        <input type="radio" name="questionTwo" value="true" id="trueTwo" checked>
+        <p>Låten ”Oh helga natt” har på svenska också ett namn efter sin upphovsman, Adams julsång.</p>
+        <input type="radio" name="questionTwo" value="true" id="trueTwo">
         <label for="trueTwo">Sant</label>
         <input type="radio" name="questionTwo" value="false" id="falseTwo">
         <label for="falseTwo">Falskt</label>
@@ -37,8 +37,8 @@
     <!-- Fråga 3 Sant eller falskt -->
     <div>
         <h4>Fråga 3</h4>
-        <p>--Här ska frågan stå</p>
-        <input type="radio" name="questionThree" value="true" id="trueThree" checked>
+        <p>Den vegetariska varianten av julskinkan görs oftast på rotselleri.</p>
+        <input type="radio" name="questionThree" value="true" id="trueThree">
         <label for="trueThree">Sant</label>
         <input type="radio" name="questionThree" value="false" id="falseThree">
         <label for="falseThree">Falskt</label>
@@ -47,8 +47,8 @@
     <!-- Fråga 4 Sant eller falskt -->
     <div>
         <h4>Fråga 4</h4>
-        <p>--Här ska frågan stå</p>
-        <input type="radio" name="questionFour" value="true" id="trueFour" checked>
+        <p>Svenskar köper cirka 7 miljoner kilo julskinka varje år.</p>
+        <input type="radio" name="questionFour" value="true" id="trueFour">
         <label for="trueFour">Sant</label>
         <input type="radio" name="questionFour" value="false" id="falseFour">
         <label for="falseFour">Falskt</label>
@@ -57,114 +57,114 @@
     <!-- Fråga 5 Multiple choice -->
     <div>
         <h4>Fråga 5</h4>
-        <p>--Här ska frågan stå</p>
+        <p>Får man mandeln i gröten i Sverige så betyder det att man skulle bli gift nästkommande år. Vad ska hända om man får mandeln i gröten under en jullunch i Finland?</p>
         <select name="questionFive" id="questionFive">
-            <!-- <option value="null">Välj svar</option> -->
-            <option value="false">5.1</option>
-            <option value="false">5.2</option>
-            <option value="true">5.3</option>
-            <option value="false">5.4</option>
+            <option value="null">Välj svar</option>
+            <option value="true">Man ska sjunga en sång</option>
+            <option value="false">Man kommer få sina julönskningar uppfyllda</option>
+            <option value="false">Man kommer INTE få sina julönskningar uppfyllda</option>
+            <option value="false">Samma som i Sverige</option>
         </select>
     </div>
 
     <!-- Fråga 6 Multiple choice -->
     <div>
         <h4>Fråga 6</h4>
-        <p>--Här ska frågan stå</p>
+        <p>Traditionen att ta in och pynta ett julträd kommer från Tyskland. I Sverige har vi gjort det i drygt 200 år, och försäljningsstatistik visar att det årligen säljs ungefär tre miljoner naturgranar i vårt land. Vilken sorts säljs det flest av?</p>
         <select name="questionSix" id="questionSix">
-            <!-- <option value="null">Välj svar</option> -->
-            <option value="false">6.1</option>
-            <option value="true">6.2</option>
-            <option value="false">6.3</option>
-            <option value="false">6.4</option>
+            <option value="null">Välj svar</option>
+            <option value="false">Kungsgran</option>
+            <option value="true">Rödgran</option>
+            <option value="false">Kullagran</option>
+            <option value="false">Blågran</option>
         </select>
     </div>
 
     <!-- Fråga 7 Multiple choice -->
     <div>
         <h4>Fråga 7</h4>
-        <p>--Här ska frågan stå</p>
+        <p>Idag finns julkalendrar i varianter med choklad och presenter, men när kom den första julkalendern i papp?</p>
         <select name="questionSeven" id="questionSeven">
-            <!-- <option value="null">Välj svar</option> -->
-            <option value="false">7.1</option>
-            <option value="false">7.2</option>
-            <option value="false">7.3</option>
-            <option value="true">7.4</option>
+            <option value="null">Välj svar</option>
+            <option value="false">1982</option>
+            <option value="false">1967</option>
+            <option value="true">1939</option>
+            <option value="false">1905</option>
         </select>
     </div>
 
     <!-- Fråga 8 Checkbox-svar -->
     <div>
         <h4>Fråga 8</h4>
-        <p>--Här ska frågan stå</p>
-        <label>
-            <input type="checkbox" name="questionEight" value="true" checked>
-            Alternativ 1
-        </label>
-        <br>
+        <p>Vilket/vilka länder firar jul den 24/12?</p>
         <label>
             <input type="checkbox" name="questionEight" value="false">
-            Alternativ 2
+            Italien
         </label>
         <br>
         <label>
             <input type="checkbox" name="questionEight" value="true">
-            Alternativ 3
+            Portugal
         </label>
         <br>
         <label>
             <input type="checkbox" name="questionEight" value="false">
-            Alternativ 4
+            Irland
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="questionEight" value="true">
+            Polen
         </label>
     </div>
 
     <!-- Fråga 9 Checkbox-svar -->
     <div>
         <h4>Fråga 9</h4>
-        <p>--Här ska frågan stå</p>
+        <p>Vilket/vilka länder firar jul den 24/12?</p>
         <label>
-            <input type="checkbox" name="questionNine" value="true" checked>
-            Alternativ 1
+            <input type="checkbox" name="questionNine" value="true">
+            Italien
         </label>
         <br>
         <label>
             <input type="checkbox" name="questionNine" value="false">
-            Alternativ 2
+            Österrike
         </label>
         <br>
         <label>
             <input type="checkbox" name="questionNine" value="true">
-            Alternativ 3
+            Irland
         </label>
         <br>
         <label>
-            <input type="checkbox" name="questionNine" value="false">
-            Alternativ 4
+            <input type="checkbox" name="questionNine" value="true">
+            USA
         </label>
     </div>
 
     <!-- Fråga 10 Checkbox-svar -->
     <div>
         <h4>Fråga 10</h4>
-        <p>--Här ska frågan stå</p>
-        <label>
-            <input type="checkbox" name="questionTen" value="true" checked>
-            Alternativ 1
-        </label>
-        <br>
+        <p>Vilken/vilka ingredienser används INTE när man bakar pepparkakor?</p>
         <label>
             <input type="checkbox" name="questionTen" value="false">
-            Alternativ 2
+            Kardemumma
         </label>
         <br>
         <label>
             <input type="checkbox" name="questionTen" value="true">
-            Alternativ 3
+            Salt
         </label>
         <br>
         <label>
             <input type="checkbox" name="questionTen" value="false">
-            Alternativ 4
+            Ingefära
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="questionTen" value="false">
+            Bikarbonat
         </label>
     </div>
 

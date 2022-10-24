@@ -67,7 +67,7 @@ resultBtn.addEventListener("click", (event) => {
 
     let result = `Resultat: ${total}/10`;
 
-    if(total === null){
+    if(total == null){
         alert("Du måste svara på alla frågor för att få ett resultat!")
     }
     else if(total < 5){
