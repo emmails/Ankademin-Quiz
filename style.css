@@ -68,11 +68,6 @@ h1 {
     margin-bottom: 50px;
 }
 
-#result {
-    float: right;
-
-}
-
 #welcomeH2 {
     position: absolute;
     left: 50%;
@@ -103,3 +98,23 @@ h1 {
  #startQuiz:hover {
     background-color: rgba(112, 112, 112, 0.3);
  }
+
+#layout div {
+    margin-bottom: 80px;
+}
+
+#result {
+    float: right;
+    background-color: whitesmoke;
+    box-shadow: 0 0 0.55rem rgba(112, 112, 112, 0.694);
+    border: none;
+}
+
+#result:hover {
+    background-color: rgba(112, 112, 112, 0.3);
+ }
+
+#showResult {
+    margin-left: 10px;
+    font-size: 20px;
+}

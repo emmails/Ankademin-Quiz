@@ -1,5 +1,6 @@
 let resultBtn = document.querySelector("#result");
 let h4 = document.createElement("h4");
+h4.id = "showResult"
 let total = 0;
 let darkModeBtn = document.querySelector("header button");
 let layout = document.querySelector("#layout");
