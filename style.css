@@ -24,13 +24,27 @@ header {
     top: 0;
 }
 
-#darkMode {
+header #darkMode {
     float: right;
+    background-color: whitesmoke;
+    box-shadow: 0 0 0.55rem rgba(112, 112, 112, 0.694);
+    border: none;
 }
+
+header #darkMode:hover {
+    background-color: rgba(112, 112, 112, 0.3);
+ }
 
 #lightMode {
     float: right;
+    background-color: whitesmoke;
+    box-shadow: 0 0 0.55rem rgba(112, 112, 112, 0.694);
+    border: none;
 }
+
+#lightMode:hover {
+    background-color: rgba(112, 112, 112, 0.3);
+ }
 
 #dark {
     background-image: url(/Pictures/darkMode.jpg);
@@ -71,4 +85,21 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+    background-color: whitesmoke;
+    box-shadow: 0 0 0.55rem rgba(112, 112, 112, 0.694);
+    border: none;
+ }
+  
+ #startQuiz a {
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0;
+ }
+  
+ #startQuiz:hover {
+    background-color: rgba(112, 112, 112, 0.3);
+ }

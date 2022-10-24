@@ -5,15 +5,12 @@ let darkModeBtn = document.querySelector("header button");
 let layout = document.querySelector("#layout");
 
 const rightAnswer = (event) => {
-    if(event === null || event.value === "null"){
-        total = null; 
-    }
-    else if(event.value === "true"){
+    if(event.value === "true"){
         total++;
-        event.parentElement.style.color = "green";
+        event.closest("div").style.color = "green";
     }
     else{
-        event.parentElement.style.color = "red";
+        event.closest("div").style.color = "red";
     }
 }
 
@@ -22,10 +19,7 @@ const rightAnswerCheckbox = (event) => {
     event.forEach((answer) => {
         checkboxAnswer.push(answer.value) 
     });
-    if(checkboxAnswer.length === 0){
-        total = null;
-    }
-    else if((event[0].name === "questionEight" && checkboxAnswer.length !== 2)||
+    if((event[0].name === "questionEight" && checkboxAnswer.length !== 2)||
     (event[0].name === "questionNine" && checkboxAnswer.length !== 3)||
     (event[0].name === "questionTen" && checkboxAnswer.length !== 1)){
         event[0].closest("div").style.color = "red";
@@ -39,8 +33,7 @@ const rightAnswerCheckbox = (event) => {
     }
 };
 
-resultBtn.addEventListener("click", (event) => {
-    h4.innerHTML = "";
+resultBtn.addEventListener("click", () => {
     total = 0;
 
     let one = document.querySelector("[name='questionOne']:checked");
@@ -54,6 +47,11 @@ resultBtn.addEventListener("click", (event) => {
     let nine = document.querySelectorAll("[name='questionNine']:checked");
     let ten = document.querySelectorAll("[name='questionTen']:checked");
 
+    if(one === null || two === null || three === null || four === null || five.value === "null" || six.value === "null" || seven.value == "null" || eight.length === 0 || nine.length == null || ten.length == null){
+        alert("Du måste svara på alla frågor för att få ett resultat!")
+    }
+
+    else {
     rightAnswer(one);
     rightAnswer(two);
     rightAnswer(three);
@@ -67,10 +65,7 @@ resultBtn.addEventListener("click", (event) => {
 
     let result = `Resultat: ${total}/10`;
 
-    if(total == null){
-        alert("Du måste svara på alla frågor för att få ett resultat!")
-    }
-    else if(total < 5){
+    if(total < 5){
         h4.innerText = `${result} 
         Underkänd!`;
         h4.style.color = "red";
@@ -87,6 +82,7 @@ resultBtn.addEventListener("click", (event) => {
     }
     
     layout.append(h4);
+}
 })
 
 darkModeBtn.addEventListener("click", (event) => {
